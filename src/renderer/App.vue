@@ -1,32 +1,25 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-
-window.electronAPI.sendMessage('Hello from App.vue!');
-</script>
-
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+    <div>
+        <HeaderSearch ref="headerSearchrl"></HeaderSearch>
+        <section class="m-content">
+            <!-- <iframe src="http://www.baidu.com" frameborder="0" scrolling="no" ref="iframe"></iframe> -->
+        </section>
+    </div>
 </template>
 
+<script setup lang="ts">
+import HeaderSearch from './components/HeaderSearch.vue';
+import { ref } from 'vue';
+</script>
+
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.m-content {
+    width: 100vw;
+    height: 90vh;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+iframe {
+    width: 99%;
+    height: 99%;
 }
 </style>
