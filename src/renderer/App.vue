@@ -1,8 +1,8 @@
 <template>
     <div>
-        <HeaderSearch ref="headerSearchrl"></HeaderSearch>
+        <HeaderSearch @emitUrlOrgin="getUrlOrgin" ref="headerSearchrl"></HeaderSearch>
         <section class="m-content">
-            <!-- <iframe src="http://www.baidu.com" frameborder="0" scrolling="no" ref="iframe"></iframe> -->
+            <iframe :src="url" frameborder="0" ref="iframe"></iframe>
         </section>
     </div>
 </template>
@@ -10,6 +10,12 @@
 <script setup lang="ts">
 import HeaderSearch from './components/HeaderSearch.vue';
 import { ref } from 'vue';
+
+let url = ref('');
+
+const getUrlOrgin = (data:string) =>{
+    url.value = data;
+}
 </script>
 
 <style scoped>
